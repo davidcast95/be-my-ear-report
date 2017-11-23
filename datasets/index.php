@@ -10,7 +10,7 @@ include '../core/nav.php';
 
 <div class="container">
 
-	<h3>Models</h3>
+	<h3>Datasets</h3>
 	<?php 
 	$files = scandir($datasets_dir);
 	$n = count($files); ?>
@@ -19,14 +19,16 @@ include '../core/nav.php';
 	    <tr>
 	      <th>#</th>
 	      <th>Name</th>
+	      <th>Action</th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  	<?php for($i=2;$i<$n;$i++) {
 	  	 ?>
-	  	<tr class="button-directory" data-dir="<?= $files[i] ?>">
+	  	<tr class="button-directory">
 	  		<td><?= $i-1 ?></td>
 		  	<td><?= $files[$i] ?></td>
+		  	<td><a class="btn btn-sm btn-primary" href="view.php?name=<?= $files[$i] ?>">View</a></td>
 	  	</tr>
 	  	<?php } ?>
 	  </tbody>

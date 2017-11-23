@@ -47,7 +47,9 @@ include '../core/nav.php';
 	  		<td><?= $i+1 ?></td>
 		  	<td><?= $wav[$i] ?></td>
 		  	<td><?= $targets[$i] ?></td>
-		  	<td></td> 
+		  	<td>
+		  		<audio class="play-button" src="<?= $dir.'/'.$wav[i].'.wav' ?>" preload="auto"></audio>Play</button>
+  			</td> 
 	  	</tr>
 	  	<?php } ?>
 	  </tbody>
@@ -86,7 +88,9 @@ include '../core/nav.php';
 	  		<td><?= $i+1 ?></td>
 		  	<td><?= $wav[$i] ?></td>
 		  	<td><?= $targets[$i] ?></td>
-		  	<td></td> 
+		  	<td>
+		  		<audio class="play-button" src="<?= $dir.'/'.$wav[i].'.wav' ?>" preload="auto"></audio>Play</button>
+  			</td> 
 	  	</tr>
 	  	<?php } ?>
 	  </tbody>

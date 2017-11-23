@@ -17,7 +17,13 @@ include '../core/nav.php';
 	<h4>Training</h4>
 	<?php 
 	$files = scandir($datasets_dir.'/'.$name.'/train');
-	$n = count($files); ?>
+	$wav = array()
+	foreach ($files as $file) {
+		if (substr($file, -3) == 'wav') {
+			array_push($wav, str_replace('.wav', '', $file));
+		}
+	} ?>
+	Total datasets: <?= count($wav) ?>
 	<table class="table table-striped table-hover table-bordered">
 		<thead class="thead-dark">
 	    <tr>
@@ -27,17 +33,14 @@ include '../core/nav.php';
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<?php for($i=2;$i<$n;$i++) {
+	  	<?php for($i=0;$i<$n;$i++) {
 	  	 ?>
 	  	<tr class="button-directory">
 	  		<td><?= $i-1 ?></td>
-		  	<td><?= $files[$i] ?></td>
+		  	<td><?= $wav[$i] ?></td>
 		  	<td></td> 
 	  	</tr>
 	  	<?php } ?>
-	  	<tr>
-	  		<td colspan=3>Total datasets: <?= $n ?></td>
-	  	</tr>
 	  </tbody>
 	</table>
 	<h4>Testing</h4>

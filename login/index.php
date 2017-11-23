@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
 <div class="container">
 	<h2 class="title">Welcome to Be My Ear Project</h2>
 	<div class="row">
-		<div class="col offset-4 col-4">
+		<div class="col col-md-offset-4 col-md-4 col-sm-offset-1 col-sm-10">
 			<div id="login-form" class="jumbotron">
 			  <h1 class="display">Login</h1>
 			  <div class="form-group">

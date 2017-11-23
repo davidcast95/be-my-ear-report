@@ -16,7 +16,7 @@ include '../core/nav.php';
 	<h3>Datasets - <?= $name ?></h3>
 	<h4>Training</h4>
 	<?php 
-	$root = '../../../..';
+	// $root = '../../../..';
 	$dir = $datasets_dir.'/'.$name.'/train';
 	$files = scandir($dir);
 	$wav = array();

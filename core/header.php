@@ -1,5 +1,4 @@
 <?php 
-include 'session.php';
 include 'config.php';
 include 'helper.php';
 include 'app.php';

@@ -24,7 +24,8 @@ include '../core/nav.php';
 			array_push($wav, str_replace('.wav', '', $file));
 		}
 		if (substr($file, -3) == 'txt') {
-			$text = fopen($datasets_dir.'/'.$name.'/train/'.$file, 'r');
+			$fileread = fopen($datasets_dir.'/'.$name.'/train/'.$file, 'r');
+			$text = fread($fileread,filesize($datasets_dir.'/'.$name.'/train/'.$file));
 			array_push($targets, $text);
 		}
 	} ?>

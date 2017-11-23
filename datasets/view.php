@@ -33,7 +33,7 @@ include '../core/nav.php';
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<?php for($i=0;$i<$n;$i++) {
+	  	<?php for($i=0;$i<count($wav);$i++) {
 	  	 ?>
 	  	<tr class="button-directory">
 	  		<td><?= $i-1 ?></td>

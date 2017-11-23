@@ -12,6 +12,6 @@ if (isset($_GET['name']) && isset($_GET['type'])) {
 	$output = fopen($filetarget, 'r');
 	var_dump($output);
 	// loop over the rows, outputting them
-	while ($row = fread($filetarget)) echo $row;
+	while ($row = fread($output, $filetarget)) echo $row;
 }
  ?>

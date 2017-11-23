@@ -6,5 +6,6 @@ session_start();
 if (isset($_SESSION['user'])) {
 	header("Location:".$baseurl.'/login');
 }
+var_dump(isset($_SESSION['user']));
 var_dump($baseurl.'/login');
  ?>

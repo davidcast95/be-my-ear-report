@@ -5,23 +5,8 @@ var iteration = true
 var epoch = false
 var training_json_data, testing_json_data
 $(document).ready(function() {
-	$.post(baseurl+'/reports/method.php', {
-		name : "read_training_csv",
-		filepath : report_dir+'/result_training.csv'
-	}).done(function(data) {
-		$('#ctc-loading').fadeOut()
-		training_json_data = JSON.parse(data)
-		updateGraph()
-	})
 
-	$.post(baseurl+'/reports/method.php', {
-		name : "read_testing_csv",
-		filepath : report_dir+'/result_testing.csv'
-	}).done(function(data) {
-		$('#cer-loading').fadeOut()
-		testing_json_data = JSON.parse(data)
-		updateGraph()
-	})
+	setInterval(loadReportData, 1000)
 
 	$('#training-radio-button').click(function() {
 		isTraining = document.getElementById('training-radio-button').checked
@@ -41,6 +26,26 @@ $(document).ready(function() {
 	})
 
 })
+
+function loadReportData() {
+	$.post(baseurl+'/reports/method.php', {
+		name : "read_training_csv",
+		filepath : report_dir+'/result_training.csv'
+	}).done(function(data) {
+		$('#ctc-loading').fadeOut()
+		training_json_data = JSON.parse(data)
+		updateGraph()
+	})
+
+	$.post(baseurl+'/reports/method.php', {
+		name : "read_testing_csv",
+		filepath : report_dir+'/result_testing.csv'
+	}).done(function(data) {
+		$('#cer-loading').fadeOut()
+		testing_json_data = JSON.parse(data)
+		updateGraph()
+	})
+}
 
 function updateGraph() {
 	if (isTraining && isTesting) {

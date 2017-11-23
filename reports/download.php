@@ -11,6 +11,8 @@ if (isset($_GET['name']) && isset($_GET['type'])) {
 	// create a file pointer connected to the output stream
 	$output = fopen($filetarget, 'r');
 	var_dump($output);
+	var_dump(fread($output, $filetarget));
+
 	// loop over the rows, outputting them
 	while ($row = fread($output, $filetarget)) echo $row;
 }

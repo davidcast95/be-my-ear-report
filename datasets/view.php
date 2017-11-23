@@ -18,9 +18,14 @@ include '../core/nav.php';
 	<?php 
 	$files = scandir($datasets_dir.'/'.$name.'/train');
 	$wav = array();
+	$targets = array();
 	foreach ($files as $file) {
 		if (substr($file, -3) == 'wav') {
 			array_push($wav, str_replace('.wav', '', $file));
+		}
+		if (substr($file, -3) == 'txt') {
+			$text = fopen($datasets_dir.'/'.$name.'/train/'.$file, 'r');
+			array_push($targets, $text);
 		}
 	} ?>
 	Total datasets: <?= count($wav) ?>
@@ -29,6 +34,7 @@ include '../core/nav.php';
 	    <tr>
 	      <th>#</th>
 	      <th>Name</th>
+	      <th>Label</th>
 	      <th>Action</th>
 	    </tr>
 	  </thead>
@@ -38,6 +44,7 @@ include '../core/nav.php';
 	  	<tr class="button-directory">
 	  		<td><?= $i-1 ?></td>
 		  	<td><?= $wav[$i] ?></td>
+		  	<td><?= $targets[$i] ?></td>
 		  	<td></td> 
 	  	</tr>
 	  	<?php } ?>
@@ -59,7 +66,7 @@ include '../core/nav.php';
 	  	<?php for($i=2;$i<$n;$i++) {
 	  	 ?>
 	  	<tr class="button-directory">
-	  		<td><?= $i-1 ?></td>
+	  		<td><?= $i+1 ?></td>
 		  	<td><?= $files[$i] ?></td>
 		  	<td></td>
 	  	</tr>

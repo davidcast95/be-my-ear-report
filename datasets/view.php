@@ -55,28 +55,40 @@ include '../core/nav.php';
 
 	<h4>Testing</h4>
 	<?php 
-	$files = scandir($datasets_dir.'/'.$name.'/dev');
-	$n = count($files); ?>
+	$dir = $datasets_dir.'/'.$name.'/dev';
+	$files = scandir($dir);
+	$wav = array();
+	$targets = array();
+	foreach ($files as $file) {
+		if (substr($file, -3) == 'wav') {
+			array_push($wav, str_replace('.wav', '', $file));
+		}
+		if (substr($file, -3) == 'txt') {
+			$fileread = fopen($dir.'/'.$file, 'r');
+			$text = fread($fileread,filesize($dir));
+			array_push($targets, $text);
+		}
+	} ?>
+	Total datasets: <?= count($wav) ?>
 	<table class="table table-striped table-hover table-bordered">
 		<thead class="thead-dark">
 	    <tr>
 	      <th>#</th>
 	      <th>Name</th>
+	      <th>Label</th>
 	      <th>Action</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<?php for($i=2;$i<$n;$i++) {
+	  	<?php for($i=0;$i<count($wav);$i++) {
 	  	 ?>
 	  	<tr class="button-directory">
 	  		<td><?= $i+1 ?></td>
-		  	<td><?= $files[$i] ?></td>
-		  	<td></td>
+		  	<td><?= $wav[$i] ?></td>
+		  	<td><?= $targets[$i] ?></td>
+		  	<td></td> 
 	  	</tr>
 	  	<?php } ?>
-	  	<tr>
-	  		<td colspan=3>Total datasets: <?= $n ?></td>
-	  	</tr>
 	  </tbody>
 	</table>
 

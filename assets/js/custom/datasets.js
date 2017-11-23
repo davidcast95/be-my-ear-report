@@ -1,5 +1,5 @@
 $(document).ready(function() {
 	$('.button-directory').click(function() {
-		alert(this.value)
+		alert($(this).data('dir'))
 	})
 })

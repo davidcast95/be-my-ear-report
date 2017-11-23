@@ -24,7 +24,7 @@ include '../core/nav.php';
 	  <tbody>
 	  	<?php for($i=2;$i<$n;$i++) {
 	  	 ?>
-	  	<tr class="button-directory" value ="<?= $files[i] ?>">
+	  	<tr class="button-directory" data-dir="<?= $files[i] ?>">
 	  		<td><?= $i-1 ?></td>
 		  	<td><?= $files[$i] ?></td>
 	  	</tr>

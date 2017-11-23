@@ -1,8 +1,6 @@
 <?php 
 if (isset($_GET['name'])) {
 	$name = $_GET['name'];
-} else {
-	header("Location: ".$baseurl.'/datasets')
 }
 $current_page = 'datasets';
 $page = 'Welcome to Be My Ear Project - Models';

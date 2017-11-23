@@ -12,7 +12,6 @@ include '../core/nav.php';
 </head>
 
 <div class="container">
-
 	<h3>Datasets - <?= $name ?></h3>
 	<h4>Training</h4>
 	<?php 
@@ -91,7 +90,6 @@ include '../core/nav.php';
 	  	<?php } ?>
 	  </tbody>
 	</table>
-
 	
 </div>
 

@@ -19,7 +19,7 @@ include '../core/nav.php';
 	<h3>Datasets - <?= $name ?></h3>
 	<h4>Training</h4>
 	<?php 
-	// $root = '../../../..';
+	$root = '../../../..';
 	$dir = $datasets_dir.'/'.$name.'/train';
 	$files = scandir($dir);
 	$wav = array();
@@ -52,7 +52,7 @@ include '../core/nav.php';
 		  	<td><?= $wav[$i] ?></td>
 		  	<td><?= $targets[$i] ?></td>
 		  	<td>
-		  		<audio id="<?= $wav[$i] ?>" src="<?= $dir.'/'.$wav[$i].'.wav' ?>"></audio>
+		  		<audio id="<?= $wav[$i] ?>" src="<?= $root.'/'.$dir.'/'.$wav[$i].'.wav' ?>"></audio>
 			  <button onclick="document.getElementById('<?= $wav[$i] ?>').play();">Play </button>
   			</td> 
 	  	</tr>

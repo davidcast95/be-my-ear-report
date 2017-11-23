@@ -13,5 +13,8 @@
     <?php } ?>
       
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="<?= base_url('logout') ?>">Logout</a></li>
+    </ul>
   </div>
 </nav>

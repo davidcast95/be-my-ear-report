@@ -13,8 +13,6 @@ include '../core/nav.php';
 	<h3>Models</h3>
 	<?php 
 	$files = scandir($models_dir);
-	var_dump($models_dir);
-	var_dump($files);
 	$n = count($files); ?>
 	<table class="table table-striped table-hover table-bordered">
 		<thead class="thead-dark">

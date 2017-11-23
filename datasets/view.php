@@ -16,7 +16,8 @@ include '../core/nav.php';
 	<h3>Datasets - <?= $name ?></h3>
 	<h4>Training</h4>
 	<?php 
-	$files = scandir($datasets_dir.'/'.$name.'/train');
+	$dir = $datasets_dir.'/'.$name.'/train';
+	$files = scandir($dir);
 	$wav = array();
 	$targets = array();
 	foreach ($files as $file) {
@@ -24,8 +25,8 @@ include '../core/nav.php';
 			array_push($wav, str_replace('.wav', '', $file));
 		}
 		if (substr($file, -3) == 'txt') {
-			$fileread = fopen($datasets_dir.'/'.$name.'/train/'.$file, 'r');
-			$text = fread($fileread,filesize($datasets_dir.'/'.$name.'/train/'.$file));
+			$fileread = fopen($dir, 'r');
+			$text = fread($fileread,filesize($dir));
 			array_push($targets, $text);
 		}
 	} ?>

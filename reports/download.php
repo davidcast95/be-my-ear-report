@@ -10,6 +10,7 @@ if (isset($_GET['name']) && isset($_GET['type'])) {
 	// header('Content-Disposition: attachment; filename=data.csv');
 	// create a file pointer connected to the output stream
 	$output = fopen($filetarget, 'r');
+	var_dump(file_exists($filetarget));
 	var_dump($output);
 	var_dump(fread($output, $filetarget));
 

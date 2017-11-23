@@ -52,7 +52,8 @@ include '../core/nav.php';
 		  	<td><?= $wav[$i] ?></td>
 		  	<td><?= $targets[$i] ?></td>
 		  	<td>
-		  		
+		  		<audio id="<?= $wav[$i] ?>" src="<?= $dir.'/'.$wav[$i].'.wav' ?>"></audio>
+			  <button onclick="document.getElementById('<?= $wav[$i] ?>').play();">Play </button>
   			</td> 
 	  	</tr>
 	  	<?php } ?>
@@ -93,7 +94,7 @@ include '../core/nav.php';
 		  	<td><?= $wav[$i] ?></td>
 		  	<td><?= $targets[$i] ?></td>
 		  	<td>
-		  		<audio class="play-button" src="<?= $dir.'/'.$wav[i].'.wav' ?>" preload="auto"></audio>Play</button>
+		  		<audio class="play-button" src="<?= $dir.'/'.$wav[i].'.wav' ?>"></audio>Play</button>
   			</td> 
 	  	</tr>
 	  	<?php } ?>

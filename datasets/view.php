@@ -16,7 +16,7 @@ include '../core/nav.php';
 	<h3>Datasets - <?= $name ?></h3>
 	<h4>Training</h4>
 	<?php 
-	$dir = $datasets_dir.'/'.$name.'/train';
+	$dir = $datasets_dir.'/'.$name.'/train/';
 	$files = scandir($dir);
 	$wav = array();
 	$targets = array();
@@ -52,7 +52,7 @@ include '../core/nav.php';
 	  	<?php } ?>
 	  </tbody>
 	</table>
-	
+
 	<h4>Testing</h4>
 	<?php 
 	$files = scandir($datasets_dir.'/'.$name.'/dev');

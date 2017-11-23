@@ -9,9 +9,8 @@ if (isset($_GET['name']) && isset($_GET['type'])) {
 	// header('Content-Disposition: attachment; filename=data.csv');
 	// create a file pointer connected to the output stream
 	$output = fopen($models_dir.'/'.$model_name.'/reports/'.$filename, 'r');
-	echo $models_dir.'/'.$model_name.'/reports/'.$filename;
 	var_dump($output);
 	// loop over the rows, outputting them
-	while ($row = fread($output, 0)) echo $row;
+	while ($row = fread($output, filesize($output))) echo $row;
 }
  ?>

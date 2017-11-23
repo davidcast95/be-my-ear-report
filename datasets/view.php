@@ -30,7 +30,7 @@ include '../core/nav.php';
 		}
 		if (substr($file, -3) == 'txt') {
 			$fileread = fopen($dir.'/'.$file, 'r');
-			$text = fread($fileread,filesize($dir));
+			$text = fread($fileread,filesize($dir.'/'.$file));
 			array_push($targets, $text);
 		}
 	} ?>
@@ -72,7 +72,7 @@ include '../core/nav.php';
 		}
 		if (substr($file, -3) == 'txt') {
 			$fileread = fopen($dir.'/'.$file, 'r');
-			$text = fread($fileread,filesize($dir));
+			$text = fread($fileread,filesize($dir.'/'.$file));
 			array_push($targets, $text);
 		}
 	} ?>

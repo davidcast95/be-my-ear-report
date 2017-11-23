@@ -24,6 +24,7 @@ if ($report_name == '' || !file_exists($report_dir)) {
 <div class="container">
 	<h3>Reports - <?= $report_name ?></h3>
 	<h4>CTC (Connectionist Temporal Connectionist) Loss</h4>
+	<a class="btn btn-sm btn-success" target="_blank" href="download.php?name=<?= $report_name ?>&type=training">Download</a>
 	<div class="card text-white bg-info">
 	  <div class="card-body">
 	    <blockquote class="card-blockquote">
@@ -60,6 +61,7 @@ if ($report_name == '' || !file_exists($report_dir)) {
 	<div class="text-center"><img style="text-align:center;" id="ctc-loading" src="<?= base_url('assets/img/spinner.gif') ?>"></img></div>
 	<div id="ctc-graph" class="graph"></div>
 	<h4>CER (Character Error Rate) Loss</h4>
+	<a class="btn btn-sm btn-success" target="_blank" href="download.php?name=<?= $report_name ?>&type=testing">Download</a>
 	<div class="card text-white bg-info">
 	  <div class="card-body">
 	    <blockquote class="card-blockquote">

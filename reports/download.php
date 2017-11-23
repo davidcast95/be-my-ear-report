@@ -12,9 +12,8 @@ if (isset($_GET['name']) && isset($_GET['type'])) {
 	$output = fopen($filetarget, 'r');
 	var_dump(file_exists($filetarget));
 	var_dump($output);
-	var_dump(fread($output, $filetarget));
+	$text = fread($output, 1000);
+	var_dump($text);
 
-	// loop over the rows, outputting them
-	while ($row = fread($output, $filetarget)) echo $row;
 }
  ?>

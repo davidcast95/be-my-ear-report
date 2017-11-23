@@ -22,8 +22,9 @@ include '../core/nav.php';
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<?php for($i=2;$i<$n;$i++) { ?>
-	  	<tr>
+	  	<?php for($i=2;$i<$n;$i++) {
+	  	 ?>
+	  	<tr class="button-directory" value ="<?= $files[i] ?>">
 	  		<td><?= $i-1 ?></td>
 		  	<td><?= $files[$i] ?></td>
 	  	</tr>
@@ -32,3 +33,5 @@ include '../core/nav.php';
 	</table>
 	
 </div>
+
+<script type="text/javascript" src="<?= base_url('assets/js/custom/datasets.js') ?>"></script>

@@ -34,7 +34,7 @@ include '../core/nav.php';
 	  	<tr class="button-directory">
 	  		<td><?= $i-1 ?></td>
 		  	<td><?= $files[$i] ?></td>
-		  	<td></td>
+		  	<td></td> 
 	  	</tr>
 	  	<?php } ?>
 	  	<tr>

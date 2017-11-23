@@ -1,7 +1,12 @@
 <?php 
+
 $current_page = '';
 $page = 'Welcome to Be My Ear Project - Login';
 include '../core/header.php';
+session_start();
+if (isset($_SESSION['user'])) {
+	header("Location:".$baseurl.'/models');
+}
  ?>
  <head>
  	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/custom/login.css') ?>">

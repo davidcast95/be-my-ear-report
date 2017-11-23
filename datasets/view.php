@@ -17,7 +17,7 @@ include '../core/nav.php';
 	<h4>Training</h4>
 	<?php 
 	$files = scandir($datasets_dir.'/'.$name.'/train');
-	$wav = array()
+	$wav = array();
 	foreach ($files as $file) {
 		if (substr($file, -3) == 'wav') {
 			array_push($wav, str_replace('.wav', '', $file));
